@@ -50,6 +50,7 @@ class PostsTableSeeder extends Seeder
         $post->body = "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut labore doloremque pariatur nobis sequi cumque eos vel natus, nam hic. Ipsam velit consequatur quod mollitia provident nobis reiciendis nam, ducimus</p>";
         $post->published_at = Carbon::now();
         $post->category_id = 1;
+        $post->user_id = 1;
         $post->save();
 
         $post->tags()->attach('1');
@@ -61,6 +62,7 @@ class PostsTableSeeder extends Seeder
         $post->body = "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut labore doloremque pariatur nobis sequi cumque eos vel natus, nam hic. Ipsam velit consequatur quod mollitia provident nobis reiciendis nam, ducimus</p>";
         $post->published_at = Carbon::now();
         $post->category_id = 1;
+        $post->user_id = 1;
         $post->save();
 
         $post->tags()->attach('2');
@@ -73,6 +75,7 @@ class PostsTableSeeder extends Seeder
         $post->body = "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut labore doloremque pariatur nobis sequi cumque eos vel natus, nam hic. Ipsam velit consequatur quod mollitia provident nobis reiciendis nam, ducimus</p>";
         $post->published_at = Carbon::now();
         $post->category_id = 2;
+        $post->user_id = 1;
         $post->save();
 
         $post->tags()->attach('3');
@@ -85,6 +88,7 @@ class PostsTableSeeder extends Seeder
         $post->body = "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut labore doloremque pariatur nobis sequi cumque eos vel natus, nam hic. Ipsam velit consequatur quod mollitia provident nobis reiciendis nam, ducimus</p>";
         $post->published_at = Carbon::now();
         $post->category_id = 2;
+        $post->user_id = 1;
         $post->save();
 
         $post->tags()->attach('4');
@@ -97,6 +101,7 @@ class PostsTableSeeder extends Seeder
         $post->body = "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut labore doloremque pariatur nobis sequi cumque eos vel natus, nam hic. Ipsam velit consequatur quod mollitia provident nobis reiciendis nam, ducimus</p>";
         $post->published_at = Carbon::now();
         $post->category_id = 2;
+        $post->user_id = 1;
         $post->save();
 
         $post->tags()->attach('2');

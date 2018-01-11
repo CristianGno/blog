@@ -19,6 +19,23 @@ class PageController extends Controller
     //$request_token = $twitter->oauth('oauth/request_token', array('oauth_callback' => 'http://blog.deve/'));
     $content = $twitter->get("account/verify_credentials");
    	return $content;*/
-    return view('welcome', compact('posts', 'url_connection'));
+    return view('pages/home', compact('posts', 'url_connection'));
     }
+
+    public function about(){
+      $namePage = "Nosotros";
+      return view('pages.about', compact('namePage'));
+    }
+
+    public function archive(){
+      $namePage = "Archivo";
+      return view('pages.archive', compact('namePage'));
+    }
+
+    public function contact(){
+      $namePage = "Contacto";
+      return view('pages.contact', compact('namePage'));
+    }
+
+
 }

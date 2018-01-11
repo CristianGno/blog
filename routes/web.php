@@ -11,7 +11,12 @@
 |
 */
 
-Route::get('/', 'PageController@home')->name('home');
+Route::get('/', 'PageController@home')->name('pages.home');
+Route::get('about', 'PageController@about')->name('pages.about');
+Route::get('archive', 'PageController@archive')->name('pages.archive');
+Route::get('contact', 'PageController@contact')->name('pages.contact');
+
+
 Route::get('/blog/{post}', 'PostsController@show')->name('posts.show');
 Route::get('/categorias/{category}', 'CategoriesController@show')->name('categories.show');
 Route::get('/tags/{tag}', 'TagsController@show')->name('tags.show');

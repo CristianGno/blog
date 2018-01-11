@@ -1,10 +1,12 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>@yield('meta-title', config('app.name') )</title>
+    <title>@yield('meta-title', isset($namePage) ? $namePage . " | " . config('app.name')  : '' . config('app.name') )</title>
     <meta name="description" content="@yield('meta-description', "Mi blog en Laravel")">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/framework.css">
@@ -19,19 +21,8 @@
     <header class="space-inter">
         <div class="container container-flex space-between">
             <figure class="logo"><img src="/img/logo.png" alt=""></figure>
-            <nav class="custom-wrapper" id="menu">
-                <div class="pure-menu"></div>
-                <ul class="container-flex list-unstyled">
-                    <li><a href="/" class="text-uppercase">Inicio</a></li>
-{{--                     @if (isset($url_connection))
-                    <li><a href="{{ $url_connection }}" class="text-uppercase">Login whit Twitter</a></li>
-                        
-                    @endif --}}
-                    <li><a href="about.html" class="text-uppercase">Login whit Twitter</a></li>
-                    <li><a href="archive.html" class="text-uppercase">Archive</a></li>
-                    <li><a href="contact.html" class="text-uppercase">Contact</a></li>
-                </ul>
-            </nav>
+
+            @include('partials.nav')
         </div>
     </header>
 

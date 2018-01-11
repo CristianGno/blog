@@ -9,7 +9,7 @@ class Post extends Model
 {
     //para que sea instancia de carbon
     protected $dates = ['published_at'];
-    protected $fillable = ['title', 'body', 'iframe', 'excerpt', 'published_at', 'category_id'];
+    protected $fillable = ['title', 'body', 'iframe', 'excerpt', 'published_at', 'category_id', 'user_id'];
 
 
     public function category() {// $post->category->name
@@ -24,6 +24,10 @@ class Post extends Model
         return $this->hasMany(Photo::class);
     }
 
+    public function owner(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
     public function getRouteKeyName(){
         return 'url';
     }
@@ -32,6 +36,11 @@ class Post extends Model
     	$query->whereNotNull('published_at')
     			  ->where('published_at', '<=', Carbon::now() )
                   ->latest('published_at');
+    }
+
+
+    public function isPublished(){
+        return ! is_null($this->published_at) && $this->published_at < today();
     }
 
 /*    public function setTitleAttribute($title){

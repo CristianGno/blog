@@ -4,7 +4,7 @@
   <li {{ request()->is('admin') ? 'class=active' : '' }}>
     <a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> <span>Inicio</span></a>
   </li>
-  <li><a href="{{ route('home') }}" target="_black" ><i class="fa fa-home"></i> Visitar Sitio</a></li>
+  <li><a href="{{ route('pages.home') }}" target="_black" ><i class="fa fa-home"></i> Visitar Sitio</a></li>
   <li class="treeview {{ request()->is('admin/posts*') ? 'active' : '' }}">
     <a href="#"><i class="fa fa-bars"></i> <span>Blog</span>
       <span class="pull-right-container">
