@@ -34,10 +34,47 @@ class Post extends Model
                   ->latest('published_at');
     }
 
-    public function setTitleAttribute($title){
+/*    public function setTitleAttribute($title){
         $this->attributes['title'] = $title;
-        $this->attributes['url'] = str_slug($title);
+
+        $url = str_slug($title);
+
+        $duplicatedUrlCount = Post::where('url', 'LIKE', "{$url}%")->count();
+
+        if( $duplicatedUrlCount ){
+
+            $url .= "-" . ++$duplicatedUrlCount;
+        }
+
+        $this->attributes['url'] = $url;
+    }*/
+
+
+    public static function create(array $attributes = []){
+
+        $post = static::query()->create($attributes);
+
+        $post->generateUrl();
+
+        return $post;
     }
+
+
+    protected function generateUrl(){
+
+        $url = str_slug($this->title);
+
+        if($this->where('url', $url)->exists()){
+            $url = "{$url}-{$this->id}";
+        }
+
+        $this->url = $url;
+
+        $this->save();
+
+    }
+
+
 
     public function setPublishedAtAttribute($published_at){
         $this->attributes['published_at'] = $published_at !== null ?  Carbon::parse($published_at) : null;
