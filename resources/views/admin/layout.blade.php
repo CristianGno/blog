@@ -173,12 +173,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  {{ auth()->user()->name }} - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  {{ auth()->user()->name }}
+                  <small>Desde {{ auth()->user()->created_at->format('d/m/Y') }}</small>
                 </p>
               </li>
               <!-- Menu Body -->
-              <li class="user-body">
+{{--               <li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
                     <a href="#">Followers</a>
@@ -191,14 +191,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </div>
                 </div>
                 <!-- /.row -->
-              </li>
+              </li> --}}
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
+           {{--      <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div> --}}
+                <div class="">
+                  <form action="{{ route('logout') }}" method="POST">
+                      {{ csrf_field() }}
+                        <button class="btn btn-default btn-block">Cerrar sesión</button>
+                    
+                  </form>
                 </div>
               </li>
             </ul>
@@ -223,7 +227,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{ auth()->user()->name }}</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
