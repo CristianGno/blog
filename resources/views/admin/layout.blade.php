@@ -369,16 +369,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- DataTables -->
+@unless (request()->is('admin/posts/*'))
 
+@include('admin.posts.create')
+
+@endunless
 
 @stack('scripts')
 
 
 <!-- AdminLTE App -->
 <script src="/adminlte/js/adminlte.min.js"></script>
-
-@include('admin.posts.create')
-
 
 </body>
 </html>
