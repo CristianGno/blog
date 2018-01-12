@@ -63,7 +63,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
+{{--           <li class="dropdown messages-menu">
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
@@ -95,11 +95,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
               <li class="footer"><a href="#">See All Messages</a></li>
             </ul>
-          </li>
+          </li> --}}
           <!-- /.messages-menu -->
 
           <!-- Notifications Menu -->
-          <li class="dropdown notifications-menu">
+{{--           <li class="dropdown notifications-menu">
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
@@ -108,7 +108,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <ul class="dropdown-menu">
               <li class="header">You have 10 notifications</li>
               <li>
-                <!-- Inner Menu: contains the notifications -->
+                Inner Menu: contains the notifications
                 <ul class="menu">
                   <li><!-- start notification -->
                     <a href="#">
@@ -120,9 +120,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
               <li class="footer"><a href="#">View all</a></li>
             </ul>
-          </li>
+          </li> --}}
           <!-- Tasks Menu -->
-          <li class="dropdown tasks-menu">
+ {{--          <li class="dropdown tasks-menu">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
@@ -157,7 +157,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="#">View all tasks</a>
               </li>
             </ul>
-          </li>
+          </li> --}}
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
@@ -173,7 +173,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  {{ auth()->user()->name }}
+                  {{ auth()->user()->name }} - {{ auth()->user()->roles->first()->name }}
                   <small>Desde {{ auth()->user()->created_at->format('d/m/Y') }}</small>
                 </p>
               </li>
