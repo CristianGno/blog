@@ -40,7 +40,7 @@ class Post extends Model
 
     public function scopeAllowed($query){
 
-        if(auth()->user()->hasRole('Admin')){
+        if(auth()->user()->can('view', $this)){
             return $query;
         }
 
@@ -112,6 +112,7 @@ class Post extends Model
 
         return $this->tags()->sync($tags);
     }
+
 
     protected static function boot(){
 

@@ -32,17 +32,14 @@ class PostsController extends Controller
 
         $this->validate($request, ['title' => 'required|min:3']);
 
-       /* $post = Post::create($request->only('title') );*/
-
         $post = Post::create($request->all());
-
 
         return redirect()->route('admin.posts.edit', $post);
     }
 
     public function edit(Post $post){
 
-        $this->authorize('view', $post);
+        $this->authorize('update', $post);
 
         return view('admin.posts.edit', [
                     'post' => $post, 
