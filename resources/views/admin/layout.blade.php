@@ -10,16 +10,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>{{ config('app.name') }} | Admin </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ asset('adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="/adminlte/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ asset('adminlte/bower_components/font-awesome/css/font-awesome.min.css') }}">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="/adminlte/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="{{ asset('adminlte/bower_components/Ionicons/css/ionicons.min.css') }}">
 
   <!-- Theme style -->
-  <link rel="stylesheet" href="/adminlte/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="{{ asset('adminlte/css/AdminLTE.min.css') }}">
 
-  <link rel="stylesheet" href="/adminlte/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="{{ asset('adminlte/css/skins/skin-blue.min.css') }}">
 
   @stack('styles')
 
@@ -78,7 +78,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a href="#">
                       <div class="pull-left">
                         <!-- User Image -->
-                        <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ asset('adminlte/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                       </div>
                       <!-- Message title and timestamp -->
                       <h4>
@@ -368,9 +368,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 3 -->
-<script src="/adminlte/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="{{ asset('adminlte/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="{{ asset('adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
 <!-- DataTables -->
 @unless (request()->is('admin/posts/*'))
@@ -383,7 +383,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 <!-- AdminLTE App -->
-<script src="/adminlte/js/adminlte.min.js"></script>
+<script src="{{ asset('adminlte/js/adminlte.min.js') }}"></script>
 
 </body>
 </html>

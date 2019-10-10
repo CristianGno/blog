@@ -5,7 +5,7 @@
                   title="Compartir en Facebook" 
                   target="_blank">
                   <img alt="Compartir en Facebook" 
-                  src="/img/flat_web_icon_set/Facebook.png">
+                  src="{{ asset('img/flat_web_icon_set/Facebook.png')}}">
                 </a>
               </li>
 
@@ -14,7 +14,7 @@
                 target="_blank" 
                 title="Tweet">
                 <img alt="Tweet" 
-                src="/img/flat_web_icon_set/Twitter.png"></a>
+                src="{{ asset('img/flat_web_icon_set/Twitter.png')}}"></a>
               </li>
 
               <li>
@@ -22,7 +22,7 @@
                 target="_blank" 
                 title="Compartir en on Google+">
                 <img alt="Compartir en Google+" 
-                src="/img/flat_web_icon_set/Google+.png"></a>
+                src="{{ asset('img/flat_web_icon_set/Google+.png')}}"></a>
               </li>
 
               <li>
@@ -30,7 +30,7 @@
                 target="_blank" 
                 title="Pin it">
                 <img alt="Pin it" 
-                src="/img/flat_web_icon_set/Pinterest.png">
+                src="{{ asset('img/flat_web_icon_set/Pinterest.png')}}">
               </a>
               </li>
 

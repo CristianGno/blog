@@ -32,7 +32,7 @@
 					      <button class="btn btn-xs btn-danger" style="position: absolute;">
 					          <i class="fa fa-remove"></i>
 					      </button>
-				            <img class="img-responsive" style="padding-bottom: 3px;" src="/storage/{{ $photo->url_image }}" alt="">
+				            <img class="img-responsive" style="padding-bottom: 3px;" src="{{ asset('storage/{{ $photo->url_image ') }}}}" alt="">
 				        </div>
 				     </form>
 				    @endforeach
@@ -157,18 +157,18 @@
 	  <!-- bootstrap datepicker -->
 
 @push('styles')
-	<link rel="stylesheet" href="/css/dropzone-5.1.0.min.css">
-	<link rel="stylesheet" href="/adminlte/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-	<link rel="stylesheet" href="/adminlte/bower_components/select2/dist/css/select2.min.css">
+	<link rel="stylesheet" href="{{ asset('css/dropzone-5.1.0.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('adminlte/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('adminlte/bower_components/select2/dist/css/select2.min.css') }}">
 	
 @endpush
   
 
 @push('scripts')
-	<script type="text/javascript" src="/js/dropzone-5.1.0.min.js"></script>
-	<script src="/adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-	<script src="/adminlte/bower_components/ckeditor/ckeditor.js"></script>
-	<script src="/adminlte/bower_components/select2/dist/js/select2.full.min.js"></script>
+	<script type="text/javascript" src="{{ asset('js/dropzone-5.1.0.min.js') }}"></script>
+	<script src="{{ asset('adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+	<script src="{{ asset('adminlte/bower_components/ckeditor/ckeditor.js') }}"></script>
+	<script src="{{ asset('adminlte/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
 	
 
 
